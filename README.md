@@ -1,4 +1,5 @@
-Test App
+Took basic MEAN, CRUD app and added socket.io to it.
+
 # MEAN Stack Angular 6 CRUD Web Application
 
 This source codes if part of [MEAN Stack Angular 6 CRUD Web Application](https://www.djamware.com/post/5b00bb9180aca726dee1fd6d/mean-stack-angular-6-crud-web-application) tutorial.

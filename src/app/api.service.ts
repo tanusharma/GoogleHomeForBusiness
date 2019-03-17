@@ -35,26 +35,26 @@ export class ApiService {
     return body || { };
   }
 
-  getBooks(): Observable<any> {
+  getEmployees(): Observable<any> {
     return this.http.get(apiUrl, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError));
   }
   
-  getBooksByFilter(filterObj): Observable<any> {
+  getEmployeesByFilter(filterObj): Observable<any> {
     return this.http.post(apiUrl, filterObj, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError));
   }
 
-  getBook(id: string): Observable<any> {
+  getEmployee(id: string): Observable<any> {
     const url = `${apiUrl}/${id}`;
     return this.http.get(url, httpOptions).pipe(
       map(this.extractData),
       catchError(this.handleError));
   }
 
-  postBook(data): Observable<any> {
+  postEmployee(data): Observable<any> {
 	  const url = `${apiUrl}/save`;
     return this.http.post(url, data, httpOptions)
       .pipe(
@@ -62,7 +62,7 @@ export class ApiService {
       );
   }
 
-  updateBook(id: string, data): Observable<any> {
+  updateEmployee(id: string, data): Observable<any> {
     const url = `${apiUrl}/${id}`;
     return this.http.put(url, data, httpOptions)
       .pipe(
@@ -70,7 +70,7 @@ export class ApiService {
       );
   }
 
-  deleteBook(id: string): Observable<{}> {
+  deleteEmployee(id: string): Observable<{}> {
     const url = `${apiUrl}/${id}`;
     return this.http.delete(url, httpOptions)
       .pipe(

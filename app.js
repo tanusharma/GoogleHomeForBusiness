@@ -6,19 +6,19 @@ var logger = require('morgan');
 
 var mongoose = require('mongoose');
 //mongoose.connect('mongodb://localhost/mean-angular6')
+//comment2
 const options = {
-  useMongoClient: true,
   reconnectTries: 5000,
   reconnectInterval: 0,
   socketTimeoutMS: 100000,
   connectTimeoutMS: 100000
-}
-
+}//options object needed to avoid mongodb network tiemout issues hopefully
+//c
 mongoose.connect('mongodb://tanu:test1234567@ds123635.mlab.com:23635/empdata', options)
   .then(() =>  console.log('connection succesful'))
   .catch((err) => console.error(err));
 
-var apiRouter = require('./routes/book');
+var apiRouter = require('./routes/employeeRoutes');
 
 var app = express();
 
@@ -26,10 +26,10 @@ app.use(logger('dev'));
 app.use(express.json());
 app.use(express.urlencoded({ extended: false }));
 app.use(express.static(path.join(__dirname, 'dist/mean-angular6')));
-app.use('/books', express.static(path.join(__dirname, 'dist/mean-angular6')));
-app.use('/book-details/:id', express.static(path.join(__dirname, 'dist/mean-angular6')));
-app.use('/book-create', express.static(path.join(__dirname, 'dist/mean-angular6')));
-app.use('/book-edit/:id', express.static(path.join(__dirname, 'dist/mean-angular6')));
+app.use('/employees', express.static(path.join(__dirname, 'dist/mean-angular6')));
+app.use('/employee-details/:id', express.static(path.join(__dirname, 'dist/mean-angular6')));
+app.use('/employee-create', express.static(path.join(__dirname, 'dist/mean-angular6')));
+app.use('/employee-edit/:id', express.static(path.join(__dirname, 'dist/mean-angular6')));
 app.use('/api', apiRouter);
 
 // catch 404 and forward to error handler

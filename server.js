@@ -7,8 +7,8 @@
 var app = require('./app');
 var debug = require('debug')('mean-angular6:server');
 var http = require('http');
-var router = require('./routes/book');
-var Book = require('./models/Book.js');
+//var router = require('./routes/employeeRoutes');
+//var Book = require('./models/Employee.js');
 
 
 /**

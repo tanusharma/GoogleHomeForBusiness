@@ -1,50 +1,51 @@
 var express = require('express');
 var router = express.Router();
 var mongoose = require('mongoose');
-var Book = require('../models/Book.js');
+var Employee = require('../models/Employee.js');
 
-/* GET ALL BOOKS */
+/* GET ALL EMPLOYEES */
 router.get('/', function(req, res, next) {
-  Book.find(req.body, function (err, products) {
+  Employee.find(req.body, function (err, products) {
     if (err) return next(err);
     res.json(products);
   });
 });
 
+/* GET Filtered EMPLOYEES */
 router.post('/', function(req, res, next) {
-  Book.find(req.body, function (err, products) {
+  Employee.find(req.body, function (err, products) {
     if (err) return next(err);
     res.json(products);
   });
 });
 
-/* GET SINGLE BOOK BY ID */
+/* GET SINGLE EMPLOYEE BY ID */
 router.get('/:id', function(req, res, next) {
-  Book.findById(req.params.id, function (err, post) {
+  Employee.findById(req.params.id, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
 });
 
-/* SAVE BOOK */
+/* SAVE EMPLOYEE */
 router.post('/save', function(req, res, next) {
-  Book.create(req.body, function (err, post) {
+  Employee.create(req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
 });
 
-/* UPDATE BOOK */
+/* UPDATE EMPLOYEE */
 router.put('/:id', function(req, res, next) {
-  Book.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
+  Employee.findByIdAndUpdate(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });
 });
 
-/* DELETE BOOK */
+/* DELETE EMPLOYEE */
 router.delete('/:id', function(req, res, next) {
-  Book.findByIdAndRemove(req.params.id, req.body, function (err, post) {
+  Employee.findByIdAndRemove(req.params.id, req.body, function (err, post) {
     if (err) return next(err);
     res.json(post);
   });

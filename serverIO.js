@@ -1,5 +1,5 @@
-var router = require('./routes/book');
-var Book = require('./models/Book.js');
+var router = require('./routes/employeeRoutes');
+var Employee = require('./models/Employee.js');
 var server = require('./server');
 var io = require('socket.io')(server);
 

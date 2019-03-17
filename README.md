@@ -1,10 +1,30 @@
-Took basic MEAN, CRUD app and added socket.io to it.
+A basic app that displays a list of employees and filters them by voice commands from google assistant or home.
 
-# MEAN Stack Angular 6 CRUD Web Application
+MEAN_CRUD APP:
+Mongo/MLAB DB
+Express
+Angular 6
+Node
+Referred to tutorial: https://www.djamware.com/post/5b00bb9180aca726dee1fd6d/mean-stack-angular-6-crud-web-application
 
-This source codes if part of [MEAN Stack Angular 6 CRUD Web Application](https://www.djamware.com/post/5b00bb9180aca726dee1fd6d/mean-stack-angular-6-crud-web-application) tutorial.
++
+Socket.io - client = server port communication
+Referred to tutorial: https://medium.com/dailyjs/real-time-apps-with-typescript-integrating-web-sockets-node-angular-e2b57cbd1ec1
 
-This project was generated with [Angular CLI](https://github.com/angular/angular-cli) version 6.0.1.
++
+DialogFlow V2 API
+Source Misc
+Some Ex: Tutorial links referred:
+Both links use legacy V1 API requests
+https://medium.com/@pallavtrivedi03/how-to-make-a-webhook-for-dialogflow-fulfillment-d02835cc50bf
+https://blog.prototypr.io/using-voice-to-control-a-website-with-google-home-part-1-3-d2355327f250
+
+As of now run devClient, devServer scripts in sepearate terminals to debug and watch both server side and ui code. Only for dev debugging.
+Will come up with a better solution later.
+
+For node debugging in chrome open link chrome://inspect/#device and click on inspect or dev debug info.
+
+Revisit to edit below info on build runs, package.json etc
 
 ## Development server
 

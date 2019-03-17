@@ -1,0 +1,27 @@
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/employees']"><mat-icon>list</mat-icon></a>
+</div>
+<mat-card class="example-card">
+  <mat-card-header>
+    <mat-card-title><h2>{{employee.Name}}</h2></mat-card-title>
+    <mat-card-subtitle>{{employee.Designation}}</mat-card-subtitle>
+  </mat-card-header>
+  <mat-card-content>
+    <dl>
+      <dt>Employee ID:</dt>
+      <dd>{{employee.EmployeeID}}</dd>
+      <dt>Name:</dt>
+      <dd>{{employee.Name}}</dd>
+      <dt>Designation:</dt>
+      <dd>{{employee.Designation}}</dd>
+      <dt>Salary:</dt>
+      <dd>{{employee.Salary}}</dd>
+      <dt>Experience:</dt>
+      <dd>{{Experience}}</dd>
+    </dl>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-raised-button color="primary" [routerLink]="['/employee-edit', employee._id]"><mat-icon>edit</mat-icon></a>
+    <a mat-raised-button color="warn" (click)="deleteEmployee(employee._id)"><mat-icon>delete</mat-icon></a>
+  </mat-card-actions>
+</mat-card>

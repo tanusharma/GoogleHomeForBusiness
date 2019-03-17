@@ -6,7 +6,7 @@ import { Event } from '../model/event';
 
 import * as socketIo from 'socket.io-client';
 
-const SERVER_URL = 'http://localhost:3000';
+const SERVER_URL = 'http://localhost:3000';//check if u can comment this later to check if it takes default host
 //const SERVER_URL = 'https://rta-server.herokuapp.com/';
 
 @Injectable()

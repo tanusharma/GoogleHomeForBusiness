@@ -4,13 +4,13 @@ import { ApiService } from '../api.service';
 import { FormControl, FormGroupDirective, FormBuilder, FormGroup, NgForm, Validators } from '@angular/forms';
 
 @Component({
-  selector: 'app-book-edit',
-  templateUrl: './book-edit.component.html',
-  styleUrls: ['./book-edit.component.css']
+  selector: 'app-employee-edit',
+  templateUrl: './employee-edit.component.html',
+  styleUrls: ['./employee-edit.component.css']
 })
-export class BookEditComponent implements OnInit {
+export class EmployeeEditComponent implements OnInit {
 
-  bookForm: FormGroup;
+  employeeForm: FormGroup;
   id:string = '';
   EmployeeID:string = '';
   Name:string = '';
@@ -22,8 +22,8 @@ export class BookEditComponent implements OnInit {
   constructor(private router: Router, private route: ActivatedRoute, private api: ApiService, private formBuilder: FormBuilder) { }
 
   ngOnInit() {
-    this.getBook(this.route.snapshot.params['id']);
-    this.bookForm = this.formBuilder.group({
+    this.getEmployee(this.route.snapshot.params['id']);
+    this.employeeForm = this.formBuilder.group({
       'EmployeeID' : [null, Validators.required],
       'Name' : [null, Validators.required],
       'Designation' : [null, Validators.required],
@@ -32,10 +32,10 @@ export class BookEditComponent implements OnInit {
     });
   }
 
-  getBook(id) {
-    this.api.getBook(id).subscribe(data => {
+  getEmployee(id) {
+    this.api.getEmployee(id).subscribe(data => {
       this.id = data._id;
-      this.bookForm.setValue({
+      this.employeeForm.setValue({
         EmployeeID: data.EmployeeID,
         Name: data.Name,
         Designation: data.Designation,
@@ -46,17 +46,17 @@ export class BookEditComponent implements OnInit {
   }
 
   onFormSubmit(form:NgForm) {
-    this.api.updateBook(this.id, form)
+    this.api.updateEmployee(this.id, form)
       .subscribe(res => {
           let id = res['_id'];
-          this.router.navigate(['/book-details', id]);
+          this.router.navigate(['/employee-details', id]);
         }, (err) => {
           console.log(err);
         }
       );
   }
 
-  bookDetails() {
-    this.router.navigate(['/book-details', this.id]);
+  employeeDetails() {
+    this.router.navigate(['/employee-details', this.id]);
   }
 }

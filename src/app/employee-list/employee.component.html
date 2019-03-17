@@ -1,11 +1,11 @@
 <div class="button-row">
-  <a mat-raised-button color="primary" [routerLink]="['/book-create']"><mat-icon>add</mat-icon></a>
+  <a mat-raised-button color="primary" [routerLink]="['/employee-create']"><mat-icon>add</mat-icon></a>
 </div>
 <div>
 	Your Query: "{{testMsg}}"
 </div>
 <div class="example-container mat-elevation-z8">
-  <table mat-table #table [dataSource]="books">
+  <table mat-table #table [dataSource]="employees">
 
     <!--- Note that these columns can be defined in any order.
           The actual rendered columns are set as a property on the row definition" -->
@@ -39,6 +39,6 @@
     </ng-container>
 	
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
-    <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/book-details/', row._id]"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/employee-details/', row._id]"></tr>
   </table>
 </div>

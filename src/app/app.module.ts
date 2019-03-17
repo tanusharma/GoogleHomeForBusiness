@@ -5,10 +5,10 @@ import { HttpClientModule } from '@angular/common/http';
 
 import { AppComponent } from './app.component';
 import { RouterModule, Routes } from '@angular/router';
-import { BookComponent } from './book/book.component';
-import { BookDetailComponent } from './book-detail/book-detail.component';
-import { BookCreateComponent } from './book-create/book-create.component';
-import { BookEditComponent } from './book-edit/book-edit.component';
+import { EmployeeComponent } from './employee-list/employee.component';
+import { EmployeeDetailComponent } from './employee-detail/employee-detail.component';
+import { EmployeeCreateComponent } from './employee-create/employee-create.component';
+import { EmployeeEditComponent } from './employee-edit/employee-edit.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 
 import { SocketService } from './shared/services/socket.service';
@@ -26,27 +26,27 @@ import {
 
 const appRoutes: Routes = [
   {
-    path: 'books',
-    component: BookComponent,
-    data: { title: 'Book List' }
+    path: 'employees',
+    component: EmployeeComponent,
+    data: { title: 'Employee List' }
   },
   {
-    path: 'book-details/:id',
-    component: BookDetailComponent,
-    data: { title: 'Book Details' }
+    path: 'employee-details/:id',
+    component: EmployeeDetailComponent,
+    data: { title: 'Employee Details' }
   },
   {
-    path: 'book-create',
-    component: BookCreateComponent,
-    data: { title: 'Create Book' }
+    path: 'employee-create',
+    component: EmployeeCreateComponent,
+    data: { title: 'Create Employee' }
   },
   {
-    path: 'book-edit/:id',
-    component: BookEditComponent,
-    data: { title: 'Edit Book' }
+    path: 'employee-edit/:id',
+    component: EmployeeEditComponent,
+    data: { title: 'Edit Employee' }
   },
   { path: '',
-    redirectTo: '/books',
+    redirectTo: '/employees',
     pathMatch: 'full'
   }
 ];
@@ -54,10 +54,10 @@ const appRoutes: Routes = [
 @NgModule({
   declarations: [
     AppComponent,
-    BookComponent,
-    BookDetailComponent,
-    BookCreateComponent,
-    BookEditComponent
+    EmployeeComponent,
+    EmployeeDetailComponent,
+    EmployeeCreateComponent,
+    EmployeeEditComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),

@@ -7,6 +7,8 @@ import { SocketService } from '../shared/services/socket.service';
 import { Action } from '../shared/model/action';
 import { Event } from '../shared/model/event';
 import { Message } from '../shared/model/message';
+import { LowerCasePipe } from '@angular/common';
+
 
 @Component({
   selector: 'app-employee',
@@ -61,9 +63,13 @@ export class EmployeeComponent implements OnInit {
         switch (message.intent) {
           case "Filter Employees":
           this.employeesFilterObj = { $or: [] };
-          message.parameters.empName.forEach((Name) => {
+          message.parameters.empName.forEach((Name: any) => {
             this.employeesFilterObj['$or'].push({Name: Name})
           });
+          message.parameters.empDesignation.forEach((Designation: any) => {
+            this.employeesFilterObj['$or'].push({Designation: Designation})
+          });
+
           this.queryText=message.query;
           this.getFilteredEmployeesList(this.employeesFilterObj);
           console.log(this.employeesFilterObj);
